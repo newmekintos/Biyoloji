@@ -11,33 +11,31 @@ function renderSection(section, color) {
   
   if (section.type === 'sinav-konulari') {
     return `
-      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-2 border-orange-400 shadow-lg mb-8">
-        <div class="text-center mb-6">
-          <h3 class="text-3xl font-bold text-orange-900"><i class="fas fa-graduation-cap mr-3"></i>${section.title}</h3>
-          <p class="text-lg text-orange-700 font-semibold mt-2">${section.subtitle}</p>
+      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-3 md:p-6 rounded-xl border-2 border-orange-400 shadow-lg mb-4 md:mb-8">
+        <div class="text-center mb-4 md:mb-6">
+          <h3 class="text-xl md:text-3xl font-bold text-orange-900"><i class="fas fa-graduation-cap mr-2 md:mr-3"></i>${section.title}</h3>
+          <p class="text-sm md:text-lg text-orange-700 font-semibold mt-1 md:mt-2">${section.subtitle}</p>
         </div>
         
         ${section.items.map((item, idx) => {
           const colorClass = idx === 0 ? 'indigo' : idx === 1 ? 'green' : 'blue';
           return `
-            <div class="mb-6">
-              <div class="bg-gradient-to-r from-${colorClass}-500 to-${colorClass}-600 text-white p-4 rounded-t-xl flex items-center justify-between">
-                <div class="flex items-center">
-                  <i class="fas ${item.icon} text-3xl mr-4"></i>
-                  <div>
-                    <span class="text-2xl font-bold">${item.soru}</span>
-                    <p class="text-sm opacity-90 mt-1">${item.konu}</p>
-                  </div>
+            <div class="mb-3 md:mb-6">
+              <div class="bg-gradient-to-r from-${colorClass}-500 to-${colorClass}-600 text-white p-3 md:p-4 rounded-t-xl flex items-center">
+                <i class="fas ${item.icon} text-xl md:text-3xl mr-2 md:mr-4 flex-shrink-0"></i>
+                <div class="flex-1 min-w-0">
+                  <span class="text-base md:text-2xl font-bold block">${item.soru}</span>
+                  <p class="text-xs md:text-sm opacity-90 mt-0.5 md:mt-1 truncate">${item.konu}</p>
                 </div>
               </div>
-              <div class="bg-white rounded-b-xl shadow-md border-2 border-${colorClass}-200 p-5">
-                <div class="space-y-3">
+              <div class="bg-white rounded-b-xl shadow-md border-2 border-${colorClass}-200 p-3 md:p-5">
+                <div class="space-y-2 md:space-y-3">
                   ${item.ozet.map((bilgi, bilgiIdx) => `
-                    <div class="flex items-start bg-${colorClass}-50 p-4 rounded-lg border-l-4 border-${colorClass}-500">
-                      <div class="bg-${colorClass}-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-4 flex-shrink-0">
+                    <div class="flex items-start bg-${colorClass}-50 p-2 md:p-4 rounded-lg border-l-4 border-${colorClass}-500">
+                      <div class="bg-${colorClass}-600 text-white rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center font-bold text-xs md:text-sm mr-2 md:mr-4 flex-shrink-0">
                         ${bilgiIdx + 1}
                       </div>
-                      <p class="text-gray-800 leading-relaxed">${bilgi}</p>
+                      <p class="text-gray-800 text-xs md:text-base leading-relaxed">${bilgi}</p>
                     </div>
                   `).join('')}
                 </div>
@@ -46,44 +44,44 @@ function renderSection(section, color) {
           `;
         }).join('')}
         
-        <div class="mt-6 bg-orange-100 p-4 rounded-lg text-center border-2 border-orange-300">
-          <p class="text-orange-900 font-bold text-lg">💡 Bu kartı ezberle = 4 soru garantisi!</p>
+        <div class="mt-3 md:mt-6 bg-orange-100 p-3 md:p-4 rounded-lg text-center border-2 border-orange-300">
+          <p class="text-orange-900 font-bold text-sm md:text-lg">💡 Bu kartı ezberle = 4 soru garantisi!</p>
         </div>
       </div>`;
   }
   
   if (section.type === 'kesif') {
     return `
-      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-2 border-indigo-400 shadow-lg">
-        <h3 class="text-3xl font-bold mb-4 text-indigo-900"><i class="fas fa-flask mr-3"></i>${section.title}</h3>
-        <div class="space-y-4">
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-3 md:p-6 rounded-xl border-2 border-indigo-400 shadow-lg">
+        <h3 class="text-xl md:text-3xl font-bold mb-3 md:mb-4 text-indigo-900"><i class="fas fa-flask mr-2 md:mr-3"></i>${section.title}</h3>
+        <div class="space-y-3 md:space-y-4">
           ${section.timeline.map((item, idx) => `
-            <div class="relative pl-12 pb-6 ${idx < section.timeline.length - 1 ? 'border-l-4 border-indigo-300' : ''}">
-              <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
+            <div class="relative pl-8 md:pl-12 pb-4 md:pb-6 ${idx < section.timeline.length - 1 ? 'border-l-2 md:border-l-4 border-indigo-300' : ''}">
+              <div class="absolute left-0 top-0 w-6 h-6 md:w-10 md:h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-xs md:text-sm">
                 ${idx + 1}
               </div>
-              <div class="bg-white p-5 rounded-lg shadow-md ml-4">
-                <div class="flex items-center gap-3 mb-2">
-                  <span class="bg-indigo-600 text-white px-3 py-1 rounded-full font-bold text-sm">${item.yil}</span>
-                  <h4 class="text-xl font-bold text-indigo-900">${item.kisi}</h4>
+              <div class="bg-white p-3 md:p-5 rounded-lg shadow-md ml-2 md:ml-4">
+                <div class="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+                  <span class="bg-indigo-600 text-white px-2 md:px-3 py-0.5 md:py-1 rounded-full font-bold text-xs md:text-sm">${item.yil}</span>
+                  <h4 class="text-base md:text-xl font-bold text-indigo-900">${item.kisi}</h4>
                 </div>
-                <p class="text-lg font-semibold text-gray-800 mb-2">${item.olay}</p>
-                <p class="text-gray-700 leading-relaxed">${item.detay}</p>
+                <p class="text-sm md:text-lg font-semibold text-gray-800 mb-1 md:mb-2">${item.olay}</p>
+                <p class="text-xs md:text-base text-gray-700 leading-relaxed">${item.detay}</p>
               </div>
             </div>
           `).join('')}
         </div>
-        <div class="mt-6 bg-indigo-100 p-5 rounded-lg border-l-4 border-indigo-600">
-          <p class="text-gray-800 leading-relaxed"><strong class="text-indigo-900">📌 Önemi:</strong> ${section.onem}</p>
+        <div class="mt-4 md:mt-6 bg-indigo-100 p-3 md:p-5 rounded-lg border-l-4 border-indigo-600">
+          <p class="text-xs md:text-base text-gray-800 leading-relaxed"><strong class="text-indigo-900">📌 Önemi:</strong> ${section.onem}</p>
         </div>
       </div>`;
   }
   
   if (section.type === 'info') {
     return `
-      <div class="${c.light} p-6 rounded-xl border-l-4 ${c.border}">
-        <h3 class="text-2xl font-bold mb-3 ${c.text}"><i class="fas fa-info-circle mr-2"></i>${section.title}</h3>
-        <p class="text-gray-700 leading-relaxed">${section.content}</p>
+      <div class="${c.light} p-3 md:p-6 rounded-xl border-l-4 ${c.border}">
+        <h3 class="text-lg md:text-2xl font-bold mb-2 md:mb-3 ${c.text}"><i class="fas fa-info-circle mr-2"></i>${section.title}</h3>
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed">${section.content}</p>
       </div>`;
   }
   
