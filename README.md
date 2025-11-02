@@ -2,6 +2,12 @@
 
 12. Basamak: Nükleik Asitler ve Protein Sentezi konularını kapsayan interaktif çalışma web sitesi.
 
+## 🌐 Canlı Demo
+
+**🔗 [https://newmekintos.github.io/Biyoloji/](https://newmekintos.github.io/Biyoloji/)**
+
+Site şu anda yayında! Yukarıdaki linke tıklayarak çalışmaya başlayabilirsiniz.
+
 ## 📚 İçerik
 
 ### 1. DNA (Deoksiribonükleik Asit)
