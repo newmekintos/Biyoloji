@@ -16,30 +16,36 @@ function renderSection(section, color) {
           <h3 class="text-3xl font-bold text-orange-900"><i class="fas fa-graduation-cap mr-3"></i>${section.title}</h3>
           <p class="text-lg text-orange-700 font-semibold mt-2">${section.subtitle}</p>
         </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          ${section.items.map((item, idx) => `
-            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 ${idx === 0 ? 'border-indigo-500' : idx === 1 ? 'border-green-500' : 'border-blue-500'} hover:scale-105 transition">
-              <div class="flex items-center mb-4 pb-3 border-b-2 ${idx === 0 ? 'border-indigo-100' : idx === 1 ? 'border-green-100' : 'border-blue-100'}">
-                <i class="fas ${item.icon} text-4xl ${idx === 0 ? 'text-indigo-600' : idx === 1 ? 'text-green-600' : 'text-blue-600'} mr-3"></i>
-                <div>
-                  <span class="text-2xl font-bold ${idx === 0 ? 'text-indigo-700' : idx === 1 ? 'text-green-700' : 'text-blue-700'}">${item.soru}</span>
+        
+        ${section.items.map((item, idx) => {
+          const colorClass = idx === 0 ? 'indigo' : idx === 1 ? 'green' : 'blue';
+          return `
+            <div class="mb-6">
+              <div class="bg-gradient-to-r from-${colorClass}-500 to-${colorClass}-600 text-white p-4 rounded-t-xl flex items-center justify-between">
+                <div class="flex items-center">
+                  <i class="fas ${item.icon} text-3xl mr-4"></i>
+                  <div>
+                    <span class="text-2xl font-bold">${item.soru}</span>
+                    <p class="text-sm opacity-90 mt-1">${item.konu}</p>
+                  </div>
                 </div>
               </div>
-              <p class="text-gray-900 font-semibold mb-3 text-sm">${item.konu}</p>
-              <div class="bg-gray-50 p-4 rounded-lg">
-                <p class="text-xs font-bold text-gray-700 mb-2">📝 Özet Bilgiler:</p>
-                <ul class="space-y-2">
-                  ${item.ozet.map(o => `
-                    <li class="text-xs text-gray-800 flex items-start">
-                      <i class="fas fa-check-circle ${idx === 0 ? 'text-indigo-500' : idx === 1 ? 'text-green-500' : 'text-blue-500'} mr-2 mt-0.5 flex-shrink-0"></i>
-                      <span class="leading-tight">${o}</span>
-                    </li>
+              <div class="bg-white rounded-b-xl shadow-md border-2 border-${colorClass}-200 p-5">
+                <div class="space-y-3">
+                  ${item.ozet.map((bilgi, bilgiIdx) => `
+                    <div class="flex items-start bg-${colorClass}-50 p-4 rounded-lg border-l-4 border-${colorClass}-500">
+                      <div class="bg-${colorClass}-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm mr-4 flex-shrink-0">
+                        ${bilgiIdx + 1}
+                      </div>
+                      <p class="text-gray-800 leading-relaxed">${bilgi}</p>
+                    </div>
                   `).join('')}
-                </ul>
+                </div>
               </div>
             </div>
-          `).join('')}
-        </div>
+          `;
+        }).join('')}
+        
         <div class="mt-6 bg-orange-100 p-4 rounded-lg text-center border-2 border-orange-300">
           <p class="text-orange-900 font-bold text-lg">💡 Bu kartı ezberle = 4 soru garantisi!</p>
         </div>
