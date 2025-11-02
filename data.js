@@ -6,9 +6,55 @@ const topics = {
     color: 'purple',
     sections: [
       {
+        type: 'sinav-konulari',
+        title: '📋 Temel Sınav Soruları/Konuları',
+        items: [
+          { soru: '1 SORU', konu: 'Nükleik asitlerin keşif sürecini özetler', icon: 'fa-flask' },
+          { soru: '2 SORU', konu: 'Nükleik asitlerin çeşitlerini ve görevlerini açıklar', icon: 'fa-dna' },
+          { soru: '1 SORU', konu: 'DNA\'nın kendini eşlemesini açıklar', icon: 'fa-copy' }
+        ]
+      },
+      {
         type: 'info',
         title: 'DNA Nedir?',
         content: 'Bir canlının sağlıklı ve DNA taşıyan her vücut hücresindeki DNA miktarı ile DNA\'yı oluşturan nükleotidlerin farklı olması, genetik süreçte farklı dokuların oluşturacak hücrelerin DNA\'ların farklı gen bölgelerinde aktif olmasından kaynaklanır. DNA yapısını oluşturan zincirlerde deoksiriboz şekerleri ters konumlanır.'
+      },
+      {
+        type: 'kesif',
+        title: '🔬 Nükleik Asitlerin Keşif Süreci (1 SORU)',
+        timeline: [
+          {
+            yil: '1869',
+            kisi: 'Friedrich Miescher',
+            olay: 'İlk nükleik asit keşfi',
+            detay: 'Lökosit (akyuvar) çekirdeklerinden nükleik asidi izole etti ve "Nüklein" adını verdi. Bu, genetik materyalin ilk keşfiydi.'
+          },
+          {
+            yil: '1919',
+            kisi: 'Phoebus Levene',
+            olay: 'Nükleotit yapısını tanımladı',
+            detay: 'Nükleotidin şeker, fosfat ve baz olmak üzere üç bileşenden oluştuğunu keşfetti. Riboz ve deoksiriboz şekerlerini tanımladı.'
+          },
+          {
+            yil: '1950',
+            kisi: 'Erwin Chargaff',
+            olay: 'Chargaff Kuralları (A=T, G=C)',
+            detay: 'DNA\'da Adenin miktarı Timin\'e, Guanin miktarı Sitozin\'e eşittir. Bu keşif Watson-Crick modeline temel oldu.'
+          },
+          {
+            yil: '1952',
+            kisi: 'Rosalind Franklin',
+            olay: 'X-ışını kristalografisi (Foto 51)',
+            detay: 'DNA\'nın sarmal yapıda olduğunu gösteren ünlü X-ray fotoğrafını çekti. Bu fotoğraf çift sarmal modelin keşfinde kritikti.'
+          },
+          {
+            yil: '1953',
+            kisi: 'James Watson & Francis Crick',
+            olay: 'Çift Sarmal Model',
+            detay: 'DNA\'nın çift sarmal yapısını önerdiler. Chargaff\'ın kurallarını ve Franklin\'in fotoğraflarını kullandılar. 1962\'de Nobel Ödülü aldılar.'
+          }
+        ],
+        onem: 'Bu keşifler, genetik bilginin nasıl saklandığını ve aktarıldığını anlamamızı sağladı. Watson-Crick modeli modern biyolojinin temelini oluşturdu.'
       },
       {
         type: 'nukleotit',
@@ -357,5 +403,23 @@ const quizData = [
     opts: ['Profaz', 'Metafaz', 'İnterfaz', 'Anafaz'],
     ans: 2,
     exp: 'Replikasyon bölünme öncesi interfaz evresinde olur.'
+  },
+  {
+    q: 'DNA\'nın çift sarmal yapısını kim ve hangi yılda önerdi?',
+    opts: ['Miescher - 1869', 'Watson ve Crick - 1953', 'Chargaff - 1950', 'Franklin - 1952'],
+    ans: 1,
+    exp: 'Watson ve Crick 1953\'te DNA\'nın çift sarmal modelini önerdiler ve 1962\'de Nobel Ödülü aldılar.'
+  },
+  {
+    q: 'İlk nükleik asidi kim keşfetti?',
+    opts: ['Watson', 'Crick', 'Friedrich Miescher', 'Chargaff'],
+    ans: 2,
+    exp: 'Friedrich Miescher 1869\'da lökosit çekirdeklerinden nükleik asidi izole etti ve "Nüklein" adını verdi.'
+  },
+  {
+    q: 'Chargaff\'ın keşfi (A=T, G=C) hangi model için temel oldu?',
+    opts: ['Hücre modeli', 'Watson-Crick çift sarmal modeli', 'Atom modeli', 'Evrim modeli'],
+    ans: 1,
+    exp: 'Chargaff\'ın 1950\'de bulduğu baz eşitlik kuralları, Watson-Crick\'in 1953\'teki çift sarmal modelinin temelini oluşturdu.'
   }
 ];

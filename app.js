@@ -9,6 +9,51 @@ const colors = {
 function renderSection(section, color) {
   const c = colors[color];
   
+  if (section.type === 'sinav-konulari') {
+    return `
+      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-2 border-orange-400 shadow-lg mb-6">
+        <h3 class="text-3xl font-bold mb-4 text-orange-900"><i class="fas fa-graduation-cap mr-3"></i>${section.title}</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          ${section.items.map(item => `
+            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-orange-500 hover:scale-105 transition">
+              <div class="flex items-center mb-3">
+                <i class="fas ${item.icon} text-3xl text-orange-600 mr-3"></i>
+                <span class="text-xl font-bold text-orange-700">${item.soru}</span>
+              </div>
+              <p class="text-gray-800 leading-relaxed">${item.konu}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+  
+  if (section.type === 'kesif') {
+    return `
+      <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-2 border-indigo-400 shadow-lg">
+        <h3 class="text-3xl font-bold mb-4 text-indigo-900"><i class="fas fa-flask mr-3"></i>${section.title}</h3>
+        <div class="space-y-4">
+          ${section.timeline.map((item, idx) => `
+            <div class="relative pl-12 pb-6 ${idx < section.timeline.length - 1 ? 'border-l-4 border-indigo-300' : ''}">
+              <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-bold text-sm">
+                ${idx + 1}
+              </div>
+              <div class="bg-white p-5 rounded-lg shadow-md ml-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="bg-indigo-600 text-white px-3 py-1 rounded-full font-bold text-sm">${item.yil}</span>
+                  <h4 class="text-xl font-bold text-indigo-900">${item.kisi}</h4>
+                </div>
+                <p class="text-lg font-semibold text-gray-800 mb-2">${item.olay}</p>
+                <p class="text-gray-700 leading-relaxed">${item.detay}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        <div class="mt-6 bg-indigo-100 p-5 rounded-lg border-l-4 border-indigo-600">
+          <p class="text-gray-800 leading-relaxed"><strong class="text-indigo-900">📌 Önemi:</strong> ${section.onem}</p>
+        </div>
+      </div>`;
+  }
+  
   if (section.type === 'info') {
     return `
       <div class="${c.light} p-6 rounded-xl border-l-4 ${c.border}">
