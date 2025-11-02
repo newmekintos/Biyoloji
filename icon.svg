@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#grad1)"/>
+  
+  <!-- DNA double helix -->
+  <!-- Left strand -->
+  <path d="M 180,100 Q 160,150 180,200 Q 200,250 180,300 Q 160,350 180,400" 
+        stroke="#ffffff" stroke-width="16" fill="none" stroke-linecap="round"/>
+  
+  <!-- Right strand -->
+  <path d="M 332,100 Q 352,150 332,200 Q 312,250 332,300 Q 352,350 332,400" 
+        stroke="#ffffff" stroke-width="16" fill="none" stroke-linecap="round"/>
+  
+  <!-- Connecting bars (base pairs) -->
+  <line x1="180" y1="120" x2="332" y2="120" stroke="#fbbf24" stroke-width="10" stroke-linecap="round"/>
+  <line x1="180" y1="170" x2="332" y2="170" stroke="#10b981" stroke-width="10" stroke-linecap="round"/>
+  <line x1="180" y1="220" x2="332" y2="220" stroke="#3b82f6" stroke-width="10" stroke-linecap="round"/>
+  <line x1="180" y1="270" x2="332" y2="270" stroke="#ef4444" stroke-width="10" stroke-linecap="round"/>
+  <line x1="180" y1="320" x2="332" y2="320" stroke="#10b981" stroke-width="10" stroke-linecap="round"/>
+  <line x1="180" y1="370" x2="332" y2="370" stroke="#fbbf24" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Circles at connection points for style -->
+  <circle cx="180" cy="120" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="120" r="8" fill="#ffffff"/>
+  <circle cx="180" cy="170" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="170" r="8" fill="#ffffff"/>
+  <circle cx="180" cy="220" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="220" r="8" fill="#ffffff"/>
+  <circle cx="180" cy="270" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="270" r="8" fill="#ffffff"/>
+  <circle cx="180" cy="320" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="320" r="8" fill="#ffffff"/>
+  <circle cx="180" cy="370" r="8" fill="#ffffff"/>
+  <circle cx="332" cy="370" r="8" fill="#ffffff"/>
+</svg>
