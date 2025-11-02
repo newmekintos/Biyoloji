@@ -8,6 +8,34 @@
 
 Site şu anda yayında! Yukarıdaki linke tıklayarak çalışmaya başlayabilirsiniz.
 
+## 📱 PWA - Yüklenebilir Uygulama
+
+Bu site artık **Progressive Web App (PWA)** olarak çalışıyor!
+
+### ✨ Özellikler:
+- 🔌 **Offline Çalışma** - İnternet bağlantısı olmadan tüm içeriğe erişin
+- 📲 **Yüklenebilir** - Telefon veya bilgisayara uygulama olarak yükleyin
+- ⚡ **Hızlı** - Cache sistemi ile anında açılır
+- 🎨 **DNA Logosu** - Özel tasarlanmış bilimsel logo
+- 📱 **Tam Ekran** - Tarayıcı çubuğu olmadan kullanın
+
+### 📥 Nasıl Yüklenir?
+
+**Desktop (Chrome/Edge/Brave):**
+1. Siteyi açın
+2. Adres çubuğunun sağındaki yükle ikonuna tıklayın
+3. "Yükle" butonuna basın
+
+**Android:**
+1. Chrome'da siteyi açın
+2. Menü → "Ana ekrana ekle"
+3. Uygulama olarak kullanın
+
+**iOS (iPhone/iPad):**
+1. Safari'de siteyi açın
+2. Paylaş ikonu → "Ana Ekrana Ekle"
+3. Ana ekrandan uygulama gibi açın
+
 ## 📚 İçerik
 
 ### 1. DNA (Deoksiribonükleik Asit)
