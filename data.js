@@ -8,10 +8,44 @@ const topics = {
       {
         type: 'sinav-konulari',
         title: '📋 Temel Sınav Soruları/Konuları',
+        subtitle: '⚡ Bu kartı oku, 4 soruyu çöz!',
         items: [
-          { soru: '1 SORU', konu: 'Nükleik asitlerin keşif sürecini özetler', icon: 'fa-flask' },
-          { soru: '2 SORU', konu: 'Nükleik asitlerin çeşitlerini ve görevlerini açıklar', icon: 'fa-dna' },
-          { soru: '1 SORU', konu: 'DNA\'nın kendini eşlemesini açıklar', icon: 'fa-copy' }
+          { 
+            soru: '1 SORU', 
+            konu: 'Nükleik asitlerin keşif sürecini özetler', 
+            icon: 'fa-flask',
+            ozet: [
+              '1869 - Miescher: İlk nükleik asit keşfi (Nüklein)',
+              '1919 - Levene: Nükleotit yapısı (şeker+fosfat+baz)',
+              '1950 - Chargaff: A=T, G=C kuralları',
+              '1952 - Franklin: X-ray Foto 51 (sarmal yapı)',
+              '1953 - Watson & Crick: Çift sarmal model, Nobel (1962)'
+            ]
+          },
+          { 
+            soru: '2 SORU', 
+            konu: 'Nükleik asitlerin çeşitlerini ve görevlerini açıklar', 
+            icon: 'fa-dna',
+            ozet: [
+              'DNA: Kalıtsal bilgi saklar, çift zincirli, deoksiriboz+Timin',
+              'RNA: Tek zincirli, riboz+Urasil (Timin YOK)',
+              'mRNA: Genetik bilgi taşır (DNA→Ribozom), protein çeşidi=mRNA çeşidi',
+              'rRNA: En çok bulunan RNA, ribozom yapısı, peptit bağı kurar',
+              'tRNA: Amino asit taşır, yonca yaprağı şekli, 20 farklı tRNA'
+            ]
+          },
+          { 
+            soru: '1 SORU', 
+            konu: 'DNA\'nın kendini eşlemesini açıklar', 
+            icon: 'fa-copy',
+            ozet: [
+              'Replikasyon: DNA\'nın kendini kopyalaması (İnterfaz)',
+              'Helikaz: Hidrojen bağlarını kopar, sarmalı açar (ATP)',
+              'DNA Polimeraz: Yeni nükleotit ekler (A-T, G-C), Mg gerekli',
+              'DNA Ligaz: Okazaki parçalarını birleştirir (ATP)',
+              'Yarı korunumlu: 1 eski + 1 yeni zincir = Melez DNA'
+            ]
+          }
         ]
       },
       {

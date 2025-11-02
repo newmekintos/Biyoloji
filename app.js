@@ -11,18 +11,37 @@ function renderSection(section, color) {
   
   if (section.type === 'sinav-konulari') {
     return `
-      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-2 border-orange-400 shadow-lg mb-6">
-        <h3 class="text-3xl font-bold mb-4 text-orange-900"><i class="fas fa-graduation-cap mr-3"></i>${section.title}</h3>
-        <div class="grid md:grid-cols-3 gap-4">
-          ${section.items.map(item => `
-            <div class="bg-white p-5 rounded-lg shadow-md border-l-4 border-orange-500 hover:scale-105 transition">
-              <div class="flex items-center mb-3">
-                <i class="fas ${item.icon} text-3xl text-orange-600 mr-3"></i>
-                <span class="text-xl font-bold text-orange-700">${item.soru}</span>
+      <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-2 border-orange-400 shadow-lg mb-8">
+        <div class="text-center mb-6">
+          <h3 class="text-3xl font-bold text-orange-900"><i class="fas fa-graduation-cap mr-3"></i>${section.title}</h3>
+          <p class="text-lg text-orange-700 font-semibold mt-2">${section.subtitle}</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          ${section.items.map((item, idx) => `
+            <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 ${idx === 0 ? 'border-indigo-500' : idx === 1 ? 'border-green-500' : 'border-blue-500'} hover:scale-105 transition">
+              <div class="flex items-center mb-4 pb-3 border-b-2 ${idx === 0 ? 'border-indigo-100' : idx === 1 ? 'border-green-100' : 'border-blue-100'}">
+                <i class="fas ${item.icon} text-4xl ${idx === 0 ? 'text-indigo-600' : idx === 1 ? 'text-green-600' : 'text-blue-600'} mr-3"></i>
+                <div>
+                  <span class="text-2xl font-bold ${idx === 0 ? 'text-indigo-700' : idx === 1 ? 'text-green-700' : 'text-blue-700'}">${item.soru}</span>
+                </div>
               </div>
-              <p class="text-gray-800 leading-relaxed">${item.konu}</p>
+              <p class="text-gray-900 font-semibold mb-3 text-sm">${item.konu}</p>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <p class="text-xs font-bold text-gray-700 mb-2">📝 Özet Bilgiler:</p>
+                <ul class="space-y-2">
+                  ${item.ozet.map(o => `
+                    <li class="text-xs text-gray-800 flex items-start">
+                      <i class="fas fa-check-circle ${idx === 0 ? 'text-indigo-500' : idx === 1 ? 'text-green-500' : 'text-blue-500'} mr-2 mt-0.5 flex-shrink-0"></i>
+                      <span class="leading-tight">${o}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
             </div>
           `).join('')}
+        </div>
+        <div class="mt-6 bg-orange-100 p-4 rounded-lg text-center border-2 border-orange-300">
+          <p class="text-orange-900 font-bold text-lg">💡 Bu kartı ezberle = 4 soru garantisi!</p>
         </div>
       </div>`;
   }
