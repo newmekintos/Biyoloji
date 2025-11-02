@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biyoloji Sınav - Nükleik Asitler</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{font-family:'Inter',sans-serif;transition:background-color .3s,color .3s}
+.grad{background:linear-gradient(135deg,#667eea,#764ba2)}
+.card{backdrop-filter:blur(10px);background:rgba(255,255,255,.95);transition:all .3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}
+.acc{max-height:0;overflow:hidden;transition:max-height .3s}
+.acc.show{max-height:5000px}
+.dna{animation:spin 20s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+html{scroll-behavior:smooth}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:rgba(255,255,255,.95)}
+.nav-text{color:#1f2937}
+.nav-link{color:#4b5563}
+body.dark{background:linear-gradient(135deg,#0f172a,#1e1b4b)!important}
+body.dark *{color:#d1d5db}
+body.dark .nav{background:rgba(15,23,42,.95)!important}
+body.dark .nav-text{color:#f3f4f6!important}
+body.dark .nav-link{color:#d1d5db!important}
+body.dark .card{background:rgba(30,41,59,.95)!important;color:#e5e7eb!important}
+body.dark .card *{color:#e5e7eb!important}
+body.dark .card h1,body.dark .card h2,body.dark .card h3,body.dark .card h4,body.dark .card h5,body.dark .card h6{color:#f3f4f6!important}
+body.dark .card p,body.dark .card li,body.dark .card span,body.dark .card div,body.dark .card button{color:#d1d5db!important}
+body.dark [class*="bg-white"],body.dark [class*="bg-gray"],body.dark [class*="bg-blue"],body.dark [class*="bg-green"],body.dark [class*="bg-purple"],body.dark [class*="bg-yellow"],body.dark [class*="bg-red"],body.dark [class*="bg-pink"],body.dark [class*="bg-indigo"],body.dark [class*="bg-orange"],body.dark [class*="bg-amber"]{background:rgba(51,65,85,.6)!important}
+body.dark [class*="border-"]{border-color:rgba(100,116,139,.4)!important}
+body.dark [class*="text-gray"],body.dark [class*="text-blue"],body.dark [class*="text-green"],body.dark [class*="text-purple"],body.dark [class*="text-red"],body.dark [class*="text-yellow"],body.dark [class*="text-orange"],body.dark [class*="text-pink"],body.dark [class*="text-indigo"]{color:#e5e7eb!important}
+body.dark .shadow,body.dark .shadow-sm,body.dark .shadow-md,body.dark .shadow-lg,body.dark .shadow-xl{box-shadow:0 0 20px rgba(0,0,0,.7)!important}
+body.dark footer{background:linear-gradient(135deg,#1e293b,#312e81)!important}
+body.dark #content>*{background:rgba(30,41,59,.95)!important}
+body.dark #content *{color:#d1d5db!important}
+body.dark #content h1,body.dark #content h2,body.dark #content h3,body.dark #content h4{color:#f3f4f6!important}
+body.dark #content [class*="rounded"]{background:rgba(51,65,85,.7)!important}
+body.dark .quiz-option{background:rgba(51,65,85,.7)!important;color:#e5e7eb!important}
+body.dark .quiz-option:hover{background:rgba(71,85,105,.8)!important}
+body.dark .quiz-option.correct{background:rgba(16,185,129,.3)!important;border-color:#10b981!important}
+body.dark .quiz-option.incorrect{background:rgba(239,68,68,.3)!important;border-color:#ef4444!important}
+</style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+
+<nav class="nav shadow-lg">
+<div class="container mx-auto px-4 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<i class="fas fa-dna text-3xl text-purple-600 dna"></i>
+<h1 class="text-2xl font-bold nav-text">Biyoloji Sınav Çalışma</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-6">
+<a href="#dna" class="nav-link hover:text-purple-600">DNA</a>
+<a href="#rna" class="nav-link hover:text-purple-600">RNA</a>
+<a href="#rep" class="nav-link hover:text-purple-600">Replikasyon</a>
+<a href="#quiz" class="nav-link hover:text-purple-600">Quiz</a>
+</div>
+<button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Tema Değiştir">
+<i class="fas fa-moon text-xl theme-icon"></i>
+</button>
+</div>
+</div>
+</nav>
+
+<section class="grad text-white py-20">
+<div class="container mx-auto px-4 text-center">
+<i class="fas fa-dna text-6xl mb-6 inline-block dna"></i>
+<h1 class="text-5xl font-bold mb-4">12. Basamak<br>Nükleik Asitler ve Protein Sentezi</h1>
+<p class="text-xl mb-8">Sınavına Hazırlık - Kapsamlı Çalışma Rehberi</p>
+<a href="#dna" class="inline-block bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100">Başla</a>
+</div>
+</section>
+
+<main class="container mx-auto px-4 py-12 max-w-6xl" id="content"></main>
+
+<footer class="grad text-white py-8 text-center">
+<p class="text-lg mb-2">Biyoloji Sınav Çalışma</p>
+<p class="text-sm opacity-80">Nükleik Asitler ve Protein Sentezi</p>
+<p class="text-sm opacity-60 mt-4">© 2024 - Başarılar! 🧬</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
